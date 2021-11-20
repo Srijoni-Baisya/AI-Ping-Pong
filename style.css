@@ -22,3 +22,29 @@
 body{
     font-family: 'Montagu Slab', serif;
 }
+
+#restart{
+    font-size: 20px;
+    box-shadow: 5px 5px 5px white;
+}
+
+.modal-dialog{
+    width: 80%;
+}
+
+.copy_right{
+    background-color: white;
+    color: rgb(29, 25, 54);
+    line-height: 2.5;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    bottom: 0;
+    position: fixed;
+    font-family: 'Domine', serif;
+}
+
+.modal-body li{
+    font-size: 18px;
+    text-align: left;
+}

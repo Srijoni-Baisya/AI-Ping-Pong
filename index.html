@@ -13,6 +13,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script> 
         
         <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap" rel="stylesheet"> 
 
     </head>
     <body background="ai_game_bg.jpg">
@@ -34,7 +35,43 @@
 
             <!--div to hold the canvas-->
             <div id="canvas"></div>
+
+            <!--restart button-->
+            <button class="btn btn-light bg-light dark-text" id="restart" onclick="restart()">Restart</button>
+
+            <!----------------------------bootstrap modal starts here------------------------------->
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        
+                        <!--header of the modal containing heading and close button-->
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal">&times;</button>
+                            <h3>Instructions</h3>
+                        </div>
+
+                        <!--body of the modal containing the instructions-->
+                        <div class="modal-body">
+                            <ol>
+                                <li>Keep the laptop screen straight and move 3-4 feet away from the screen.</li>
+                                <li>When you move your right wrist up and down, a red dot will appear on your wrist.</li>
+                                <li>Press the Play button to start the game.</li>
+                                <li>You have to control the red paddle by moving your right wrist upwards and downwards. The yellow paddle will be controlled by the computer.</li>
+                                <li>You have to prevent the ball from touching the black-coloured side by controlling the red paddle, else the computer will gain points.</li>
+                                <li>When the game is over, press the Restart button to play again.</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!----------------------------bootstrap modal starts here------------------------------->
         </center>
+
+        <!--copyright footer-->
+        <div class="copy_right">
+            Created By : Srijoni Baisya
+        </div>
 
         <script src="main.js"></script>
     </body>
