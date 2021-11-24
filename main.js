@@ -23,10 +23,29 @@ var ball = {
 
 function setup(){
   var canvas =  createCanvas(700,600);
+
+  //2. place the canvas inside the html div
+  canvas.parent('canvas');
+
+  //3. access the webcam
+  video = createCapture(VIDEO);
+  video.size(700,600);
+  video.hide();
+
+  //5. initialize the poseNet model
+  poseNet = ml5.poseNet(video, modelLoaded);
+}
+
+//6. define the modelLoaded() function to start the initialization of the poseNet model
+function modelLoaded(){
+  console.log("PoseNet Model is Loaded!");
 }
 
 
 function draw(){
+
+  //4. place the webcam live view inside the canvas
+  image(video,0,0,700,600);
 
  background(0); 
 
@@ -65,6 +84,7 @@ function draw(){
    
    //function move call which in very important
     move();
+
 }
 
 

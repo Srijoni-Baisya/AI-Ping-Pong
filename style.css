@@ -26,6 +26,8 @@ body{
 #restart{
     font-size: 20px;
     box-shadow: 5px 5px 5px white;
+    margin-bottom: 70px;
+    margin-top: 30px;
 }
 
 .modal-dialog{
@@ -47,4 +49,11 @@ body{
 .modal-body li{
     font-size: 18px;
     text-align: left;
+}
+
+/*1. style the canvas*/
+canvas{
+    background-color: white;
+    border: 10px ridge;
+    box-shadow: 5px 5px 5px white;
 }
