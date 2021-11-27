@@ -1,3 +1,9 @@
+//variables to store x and y coordinates of right wrist
+rightWristX = "";
+rightWristY = "";
+
+//variable to store score of right wrist
+rightWrist_score = "";
 
 /*created by prashant shukla */
 
@@ -34,6 +40,9 @@ function setup(){
 
   //5. initialize the poseNet model
   poseNet = ml5.poseNet(video, modelLoaded);
+
+  //execute poseNet
+  poseNet.on('pose', gotPoses);
 }
 
 //6. define the modelLoaded() function to start the initialization of the poseNet model
@@ -41,11 +50,28 @@ function modelLoaded(){
   console.log("PoseNet Model is Loaded!");
 }
 
+//define gotPoses() function
+function gotPoses(results){
+  if (results.length > 0){
+    console.log(results);
+    rightWristX = results[0].pose.rightWrist.x;
+    rightWristY = results[0].pose.rightWrist.y;
+    rightWrist_score = results[0].pose.keypoints[10].score;
+    console.log("Right Wrist X = " + rightWristX + "  , Right Wrist Y = " + rightWristY + "  , Right Wrist score = " + rightWrist_score);
+  }
+}
 
 function draw(){
 
   //4. place the webcam live view inside the canvas
   image(video,0,0,700,600);
+
+  // check if right wrist is detected, then draw a red circle on the right wrist
+  if (rightWrist_score > 0.2){
+    fill("#FF0000");
+    stroke("#FF0000");
+    circle(rightWristX, rightWristY, 20);
+  }
 
  background(0); 
 
