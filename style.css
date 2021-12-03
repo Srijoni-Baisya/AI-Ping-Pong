@@ -53,7 +53,7 @@ body{
 
 /*1. style the canvas*/
 canvas{
-    background-color: white;
+    background-color: linen;
     border: 10px ridge;
     box-shadow: 5px 5px 5px white;
 }
